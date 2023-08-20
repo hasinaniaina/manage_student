@@ -1,0 +1,137 @@
+<div id="list-section">
+    <div class="card">
+        <div class="card-header">
+          Liste des apprenants
+        </div>
+        <div class="card-body">
+            <div class="filtre-container">
+                <div class="form-group row">
+                    <div class="col-sm-3">
+                        <label for="name" class="col-form-label">Nom ou Prénom:</label>
+                        <input type="text" name="name" class="form-control form-control-sm" placeholder="Nom et prénom">
+                        <div class="auto-complete-filter">
+                            <ul class="list-name">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="prom" class="col-form-label">Promotion:</label>
+                        <input type="number" name="prom" class="form-control form-control-sm" placeholder="Promotion">
+                        <div class="auto-complete-filter">
+                            <ul class="list-prom">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="fee" class="col-form-label">Frais de cour:</label>
+                        <select class="form-control form-control-sm filtre-select" name="fee" placeholder="Frais de cour">
+                            <option value="" disabled selected>Selectionner</option>
+                            <option>OK</option>
+                            <option>NOK</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="test" class="col-form-label">Examen:</label>
+                        <select class="form-control form-control-sm filtre-select" name="test" placeholder="Examen">
+                            <option value="" disabled selected>Selectionner</option>
+                            <option>OK</option>
+                            <option>NOK</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filtre-button-container">
+                    <button class="btn btn-success" id="btn-filtre-search" disabled>Rechercher</button>
+                    <button class="btn btn-danger" id="btn-filtre-clear">Effacer le(s) filtre(s)</button>
+                </div>
+            </div>
+            <div class="table-holder">
+                <div class="table-header-holder">
+                    <div class="tab-clicked">
+                        <div id="tab-clicked-list-etudiant" class="tab active">
+                            Liste Étudiant
+                        </div>
+                        <div id="tab-clicked-examen" class="tab">
+                            Examen
+                        </div>
+                    </div>
+                    <div class="total-ligne-container">
+                        <label>Total ligne: </label>
+                        <div class="total-ligne-select">
+                            <select name="total-ligne" id="total-ligne" class="form-control form-control-sm">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-tab">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nom et prénom</th>
+                            <th scope="col">Niveau</th>
+                            <th scope="col">Promotion</th>
+                            <th scope="col">Frais de cour</th>
+                            <th scope="col">Examen</th>
+                            <th scope="col" colspan="2"></th>
+                        </tr>
+                        </thead>
+                        <tbody id="list-student-holder">
+                        </tbody>
+                    </table>
+                </div>
+    
+                <!-- examen tab -->
+                <div class="examen-tab">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th scope="col">Nom et prénom</th>
+                            <th scope="col">PR</th>
+                            <th scope="col">GR</th>
+                            <th scope="col">CLAR</th>
+                            <th scope="col">LIS</th>
+                            <th scope="col" colspan="2"></th>
+                        </tr>
+                        </thead>
+                        <tbody id="list-examen-holder">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pagination-holder">
+                <ul id="pagination-demo" class="pagination-sm"></ul>
+            </div>
+            <div class="export-xlsx-holder">
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exportModal">
+                    Export de la liste Xlsx
+                  </button>
+                  
+                  <!-- Modal -->
+                <div class="modal fade" id="exportModal" tabindex="-1" role="dialog" aria-labelledby="exportModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exportModalLabel">Export en Xlsx</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="radio" class="export-xlsx" id="certificat" name="export" value="CERT" checked="true">
+                        <label for="html">Exporter la liste des étudiant ayant eu un Certificat</label><br>
+                        <input type="radio" class="export-xlsx" id="attestation" name="export" value="ATT">
+                        <label for="css">Exporter la liste des étudiant ayant eu une Attestation</label><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="exportXlsx()">Exporter</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

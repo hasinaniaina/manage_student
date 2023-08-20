@@ -1,0 +1,25 @@
+{
+  "name": "student-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-packager ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "22.0.0",
+    "electron-packager": "^17.1.1"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.9",
+    "cheerio": "^1.0.0-rc.12",
+    "jquery": "^3.6.3",
+    "sql.js": "^0.4.0",
+    "xlsx": "^0.18.5"
+  }
+}

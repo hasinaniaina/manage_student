@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/lib/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/lib/font-awesome/css/fontawesome.min.css">
+    <title>Gestion d'étudiant FLTC</title>
+  </head>
+  <body>
+    <div class="loading-container">
+      <div class="loading">
+        <img src="./assets/images/loading.jpeg" alt="loading">
+      </div>
+    </div>
+    <div class='dashboard'>
+        <div class="dashboard-left-clone">
+          <div></div>
+        </div>
+        <div class="dashboard-nav" id="nav-bar">
+        </div>
+        <div class='dashboard-app'>
+          <div class='dashboard-content' id="content-holder">
+          </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    if (typeof module === 'object') {window.module = module; module = undefined;}
+  </script>
+  <script src="./assets/lib/jquery.js"></script>
+  <script src="./assets/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="./assets/lib/font-awesome/js/fontawesome.min.js"></script>
+  <script src="./assets/lib/jquery.twbsPagination.min.js"></script>
+  <script>
+    require('./src/renderer.js')
+    require('./src/controller.js')
+  </script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./src/filtre.js"></script>
+</html>

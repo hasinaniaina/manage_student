@@ -1,0 +1,135 @@
+<div id="add-section">
+    <div class="card">
+        <div class="card-header">
+          Information d'un étudiant
+        </div>
+        <div class="card-body">
+            <div class="student-info">
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Nom et prénom:</label>
+                    <div class="col-sm-10">
+                      <input type="Text" name="name" class="form-control form-control-sm" id="name" placeholder="Nom et prénom">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Niveau:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control form-control-sm" name="level">
+                            <option>Débutant</option>
+                            <option>Perfectionnement</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Promotion:</label>
+                    <div class="col-sm-10">
+                        <input type="number" name="prom" class="form-control form-control-sm">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="facture-info">
+                <div class="sous-recu-holder" id="sous-pattern-1">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label sous-label">N° souche:</label>
+                        <div class="col-sm-8" style="position: relative;">
+                            <input type="text" name="sous-n-1" class="form-control form-control-sm sous-input" id="n_sous-1" placeholder="Numéro sous">
+                            <div class="auto-complete-sous">
+                                <ul class="list-sous">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 recu-input-holder">
+                            <a href="#" style="display:none" onclick="delete_sous_line(this); return false;" id="delete_sous_line-1" class="delete-sous"><i class="fas fa-minus-circle"></i></a>
+                        </div>
+                    </div>  
+                    <div class="form-group row recu-holder" >
+                        <div class="row col-sm-12 recu-pattern" id="recu-pattern-1-1">
+                            <label class="col-sm-2 col-form-label recu-label">Reçu:</label>
+                            <div class="col-sm-3 recu-input-holder">
+                                <input type="text" name="recu-n-1-1" class="form-control form-control-sm recu-input" id="n-recu-1-1" placeholder="Reçu N°">
+                            </div>
+                            <div class="col-sm-4 recu-input-holder">
+                                <input type="number" name="recu-amount-1-1" class="form-control form-control-sm recu-amount-input" id="recu-amount-1-1" placeholder="montant en Ariary">
+                            </div>
+                            <div class="col-sm-2 recu-input-holder">
+                                <a href="#" style="display:none" onclick="delete_recu_line(this);return false" id="delete_recu_line-1-1" class="delete-recu"><i class="fas fa-minus-circle"></i></a>
+                            </div>
+                        </div>
+                        <div class="form-group row add-recu-holder col-sm-12" >
+                            <a href="#" class="add-recu-1"  onclick="add_recu(this);return false;"><i class="fas fa-plus"></i>&nbsp;Ajouter un numéro reçu </a>
+                        </div>
+                    </div>
+                </div> 
+                <div class="form-group row add-sous-holder col-sm-12" >
+                    <a href="#" class="add-sous"  onclick="add_sous(this);return false;"><i class="fas fa-plus"></i>&nbsp;Ajouter un numéro sous </a>
+                </div>                  
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <p><strong>Total payé: <span id="total-payed"></span>&nbsp;Ariary</strong></p>
+                    </div>
+                    <div class="col-sm-6"><p><strong>Restant à payer: <span id="remains-payed"></span>&nbsp;Ariary</strong></p></div>
+                </div>         
+            </div>
+            <hr>
+            <div class="examen-info" style="display:none">
+                <div class="form-group row" id="all-note-holder">
+                    <div class="col-sm-3 note-holder"> 
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Note PR:</label>
+                            <div class="col-sm-6">
+                                <select class="form-control form-control-sm note-test" name="note-pr">
+                                    <option>0</option>
+                                    <option>1</option>
+                                </select>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 note-holder"> 
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Note GR:</label>
+                            <div class="col-sm-6">
+                                <select class="form-control form-control-sm note-test" name="note-gr">
+                                    <option>0</option>
+                                    <option>1</option>
+                                </select>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 note-holder"> 
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Note CLAR:</label>
+                            <div class="col-sm-6">
+                                <select class="form-control form-control-sm note-test" name="note-clar">
+                                    <option>0</option>
+                                    <option>1</option>
+                                </select>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 note-holder"> 
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Note LIS:</label>
+                            <div class="col-sm-6">
+                                <select class="form-control form-control-sm note-test" name="note-lis">
+                                    <option>0</option>
+                                    <option>1</option>
+                                </select>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>                            
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <p><strong>Total: <span id="total-test">0</span>/4</strong></p>
+                    </div>
+                </div> 
+            </div>
+            <hr>
+            <div class="from-group">
+                <button class="btn btn-warning" onclick="save();">Sauvegarder et rester sur la page</button>
+                <button class="btn btn-success" onclick="save_and_quit()">Sauvegarder et quiter la page</button>
+            </div>
+        </div>
+    </div>
+</div>
